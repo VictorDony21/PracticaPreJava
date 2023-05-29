@@ -62,7 +62,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="21sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:inputType="number"/>
 
         </LinearLayout>
 
@@ -103,7 +104,8 @@
                 android:text="Horas trabajadas: "
                 android:textAlignment="center"
                 android:textSize="21sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:inputType="number"/>
 
             <EditText
                 android:id="@+id/txtHorasT"
@@ -134,7 +136,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="21sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:inputType="number"/>
 
         </LinearLayout>
 
@@ -168,21 +171,21 @@
             android:textAlignment="center">
 
             <RadioButton
-                android:id="@+id/radioButton1"
+                android:id="@+id/radioAuxiliar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Auxiliar  "
                 android:textSize="21sp" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/radioAlbañil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Albañil  "
                 android:textSize="21sp" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/radioIngObra"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ing. Obra"
@@ -210,7 +213,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="21sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:inputType="none"/>
 
         </LinearLayout>
 
@@ -234,7 +238,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="21sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:inputType="none"/>
 
         </LinearLayout>
 
@@ -258,7 +263,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="21sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:inputType="none"
+                />
 
         </LinearLayout>
 
