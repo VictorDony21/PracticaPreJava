@@ -4,21 +4,21 @@ public class ReciboNomina {
 
     private static final double PAGO_BASE = 200.0;
 
+
     public static double calcularSubtotal(int horasNormales, int horasExtras, int puesto) {
         double incrementoPago = 0.0;
 
         if (puesto == 1) {
-            incrementoPago = PAGO_BASE * 0.2;
+            incrementoPago = PAGO_BASE * 1.2;
         } else if (puesto == 2) {
-            incrementoPago = PAGO_BASE * 0.5;
+            incrementoPago = PAGO_BASE * 1.5;
         } else if (puesto == 3) {
-            incrementoPago = PAGO_BASE;
+            incrementoPago = PAGO_BASE * 2.0;
         }
 
-        double pagoHorasNormales = PAGO_BASE + incrementoPago;
-        double pagoHorasExtras = PAGO_BASE * 2.0;
 
-        double subtotal = (pagoHorasNormales * horasNormales) + (pagoHorasExtras * horasExtras);
+
+        double subtotal = (incrementoPago * horasNormales) + (incrementoPago * horasExtras * 2);
 
         return subtotal;
     }
@@ -32,5 +32,7 @@ public class ReciboNomina {
         double total = subtotal - impuesto;
         return total;
     }
+
+
 }
 

@@ -13,13 +13,15 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Random;
+
 public class ReciboNominaActivity extends AppCompatActivity {
 
-    private EditText txtNumRecibo, txtNombre, txtHorasT, txtHorasE;
+    private EditText txtNombre, txtHorasT, txtHorasE;
     private Button btnCalcular, btnLimpiar, btnRegresar;
     private RadioGroup radioGroup;
     private RadioButton radioAuxiliar, radioAlbañil, radioIngObra;
-    private TextView lblUsuario, txtSubtotal, txtImpuesto, txtTotal;
+    private TextView txtNumRecibo, lblUsuario, txtSubtotal, txtImpuesto, txtTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +55,14 @@ public class ReciboNominaActivity extends AppCompatActivity {
             lblUsuario.setText("Bienvenido " + usuario);
         }
 
+
+
         // Botón para calcular
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (validarCampos()) {
+                    numRandom();
                     calcularNomina();
                 } else {
                     Toast.makeText(ReciboNominaActivity.this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show();
@@ -84,10 +89,6 @@ public class ReciboNominaActivity extends AppCompatActivity {
 
     private boolean validarCampos() {
         boolean camposCompletos = true;
-        if (txtNumRecibo.getText().toString().isEmpty()) {
-            txtNumRecibo.setError("Campo obligatorio");
-            camposCompletos = false;
-        }
         if (txtNombre.getText().toString().isEmpty()) {
             txtNombre.setError("Campo obligatorio");
             camposCompletos = false;
@@ -119,6 +120,16 @@ public class ReciboNominaActivity extends AppCompatActivity {
         txtSubtotal.setText(String.valueOf(subtotal));
         txtImpuesto.setText(String.valueOf(impuesto));
         txtTotal.setText(String.valueOf(total));
+    }
+
+    public void numRandom() {
+        // Crear una instancia de la clase Random
+        Random random = new Random();
+
+        // Generar un número aleatorio entre 1 y 99999 (5 dígitos)
+        int numeroAleatorio = random.nextInt(99999) + 1;
+
+        txtNumRecibo.setText("" + numeroAleatorio);
     }
 
     private int obtenerPuestoSeleccionado() {
